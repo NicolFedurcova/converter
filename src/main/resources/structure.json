@@ -1,0 +1,181 @@
+{
+  "endpoints": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      }
+    }
+  ],
+  "pods": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "string"
+          }
+        ],
+        "volumes": [
+          {
+            "secret": {
+              "secretName": "string",
+              "secret": "string"
+            },
+            "projected": {
+              "sources": [
+                {
+                  "configMap": {
+                    "name": "string"
+                  }
+                }
+              ]
+            },
+            "configMap": {
+              "name": "string"
+            },
+            "name": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "deployments": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": {
+              "name": "string"
+            },
+            "volumes": {
+              "secret": {
+                "name": "string",
+                "secretName": "string"
+              },
+              "name": "string",
+              "configMap": {
+                "name": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "secrets": [
+    "string"
+  ],
+  "services": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      }
+    }
+  ],
+  "serviceAccounts": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      },
+      "secrets": [
+        {
+          "name": "string"
+        }
+      ]
+    }
+  ],
+  "configMaps": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      }
+    }
+  ],
+  "statefulSets": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": {
+              "name": "string"
+            },
+            "volumes": {
+              "secret": {
+                "name": "string",
+                "secretName": "string"
+              },
+              "name": "string",
+              "configMap": {
+                "name": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "replicaSets": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": {
+              "name": "string"
+            },
+            "volumes": {
+              "secret": {
+                "name": "string",
+                "secretName": "string"
+              },
+              "name": "string",
+              "configMap": {
+                "name": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "networkPolicies": [
+    {
+      "kind": "string",
+      "metadata": {
+        "labels": {},
+        "name": "string"
+      }
+    }
+  ],
+  "containers": [
+    {
+      "name": "string"
+    }
+  ]
+}
