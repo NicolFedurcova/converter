@@ -1,8 +1,6 @@
 package sk.upjs.ics.op;
 
 public class Detail {
-
-
     private String info;
 
     public Detail(String info) {
