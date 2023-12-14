@@ -4,7 +4,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       }
     }
   ],
@@ -13,7 +14,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       },
       "spec": {
         "containers": [
@@ -23,6 +25,7 @@
         ],
         "volumes": [
           {
+            "name": "string",
             "secret": {
               "secretName": "string",
               "secret": "string"
@@ -38,8 +41,7 @@
             },
             "configMap": {
               "name": "string"
-            },
-            "name": "string"
+            }
           }
         ]
       }
@@ -50,7 +52,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       },
       "spec": {
         "template": {
@@ -81,7 +84,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       }
     }
   ],
@@ -90,7 +94,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       },
       "secrets": [
         {
@@ -104,7 +109,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       }
     }
   ],
@@ -113,7 +119,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       },
       "spec": {
         "template": {
@@ -141,7 +148,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       },
       "spec": {
         "template": {
@@ -169,7 +177,8 @@
       "kind": "string",
       "metadata": {
         "labels": {},
-        "name": "string"
+        "name": "string",
+        "namespace": "string"
       }
     }
   ],

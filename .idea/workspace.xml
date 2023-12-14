@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="Rolo try commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/structure.json" afterDir="false" />
+    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="add json with data structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/structure.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/structure.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +61,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roniko\IdeaProjects\converter\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,7 +80,7 @@
       <workItem from="1702374406846" duration="587000" />
       <workItem from="1702478875790" duration="884000" />
       <workItem from="1702550176141" duration="4525000" />
-      <workItem from="1702587638219" duration="649000" />
+      <workItem from="1702587638219" duration="2500000" />
     </task>
     <task id="LOCAL-00001" summary="Rolo try commit">
       <created>1702587684179</created>
@@ -84,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702587684179</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add json with data structure">
+      <created>1702588339802</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702588339802</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rolo try commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rolo try commit" />
+    <MESSAGE value="add json with data structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="add json with data structure" />
   </component>
 </project>
