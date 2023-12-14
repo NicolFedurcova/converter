@@ -2,7 +2,7 @@ package sk.upjs.ics.op;
 
 import java.util.List;
 
-public class VertexObject {
+public class VertexObject { 
 
     private Title title;
     private Detail details;
