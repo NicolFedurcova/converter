@@ -58,10 +58,10 @@
       "spec": {
         "template": {
           "spec": {
-            "containers": {
+            "containers": [{
               "name": "string"
-            },
-            "volumes": {
+            }],
+            "volumes": [{
               "secret": {
                 "name": "string",
                 "secretName": "string"
@@ -70,7 +70,7 @@
               "configMap": {
                 "name": "string"
               }
-            }
+            }]
           }
         }
       }
@@ -125,10 +125,10 @@
       "spec": {
         "template": {
           "spec": {
-            "containers": {
+            "containers": [{
               "name": "string"
-            },
-            "volumes": {
+            }],
+            "volumes": [{
               "secret": {
                 "name": "string",
                 "secretName": "string"
@@ -137,7 +137,7 @@
               "configMap": {
                 "name": "string"
               }
-            }
+            }]
           }
         }
       }
@@ -154,10 +154,10 @@
       "spec": {
         "template": {
           "spec": {
-            "containers": {
+            "containers": [{
               "name": "string"
-            },
-            "volumes": {
+            }],
+            "volumes": [{
               "secret": {
                 "name": "string",
                 "secretName": "string"
@@ -166,7 +166,7 @@
               "configMap": {
                 "name": "string"
               }
-            }
+            }]
           }
         }
       }

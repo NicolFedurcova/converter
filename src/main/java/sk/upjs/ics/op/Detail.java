@@ -1,5 +1,7 @@
 package sk.upjs.ics.op;
 
+import java.util.Objects;
+
 public class Detail {
     private String info;
 
@@ -21,5 +23,18 @@ public class Detail {
     @Override
     public String toString() {
         return " {" + info  + "} ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Detail detail = (Detail) o;
+        return Objects.equals(info, detail.info);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(info);
     }
 }

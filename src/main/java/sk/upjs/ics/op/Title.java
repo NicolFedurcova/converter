@@ -1,6 +1,7 @@
 package sk.upjs.ics.op;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Title {
 
@@ -48,5 +49,18 @@ public class Title {
                 ", \"name\": \"" + name + '\"' +
                 ", \"labels\": " + labels +
                 "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Title title = (Title) o;
+        return Objects.equals(kind, title.kind) && Objects.equals(name, title.name) && Objects.equals(labels, title.labels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(kind, name, labels);
     }
 }
