@@ -2,11 +2,11 @@ package sk.upjs.ics.op;
 
 public class Link {
 
-    private String source;
-    private String target;
+    private int source;
+    private int target;
     private int value;
 
-    public Link(String source, String target, int value) {
+    public Link(int source, int target, int value) {
         this.source = source;
         this.target = target;
         this.value = value;
@@ -15,19 +15,19 @@ public class Link {
     public Link() {
     }
 
-    public String getSource() {
+    public int getSource() {
         return source;
     }
 
-    public void setSource(String source) {
+    public void setSource(int source) {
         this.source = source;
     }
 
-    public String getTarget() {
+    public int getTarget() {
         return target;
     }
 
-    public void setTarget(String target) {
+    public void setTarget(int target) {
         this.target = target;
     }
 

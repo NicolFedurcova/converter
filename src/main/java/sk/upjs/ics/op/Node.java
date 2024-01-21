@@ -2,12 +2,14 @@ package sk.upjs.ics.op;
 
 public class Node {
 
-    private String id;
+    private int id;
+    private String topLabel;
     private String group;
     private String detail;
 
-    public Node(String id, String group, String detail) {
+    public Node(int id, String topLabel, String group, String detail) {
         this.id = id;
+        this.topLabel = topLabel;
         this.group = group;
         this.detail = detail;
     }
@@ -15,12 +17,20 @@ public class Node {
     public Node() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTopLabel() {
+        return topLabel;
+    }
+
+    public void setTopLabel(String topLabel) {
+        this.topLabel = topLabel;
     }
 
     public String getGroup() {
@@ -43,6 +53,7 @@ public class Node {
     public String toString() {
         return "{" +
                 "\"id\": " + id + "," +
+                "\"topLabel\": " + topLabel + "," +
                 "\"group\": \"" + group + "\"," +
                 "\"detail\": " + detail + "" +
                 "}\n";

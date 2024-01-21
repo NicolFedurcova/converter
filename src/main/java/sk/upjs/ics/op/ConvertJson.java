@@ -9,11 +9,22 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ConvertJson {
 
-    public static String makeId(String title){
+    public static String makeUniqueID(JSONObject object){
+
+        String title = makeTopLabel(object.getJSONObject("title").toString());
+        String details = makeTopLabel(object.getJSONObject("details").toString());
+        return  makeTopLabel(title)+ "     " + makeTopLabel(details);
+
+
+    }
+
+    public static String makeTopLabel(String title){
         /*
         String copy = title;
         copy.replace("\"", " ");
@@ -41,6 +52,28 @@ public class ConvertJson {
         return "\"" + copy + "\"";
     }
 
+    public static String removeDelimiter(String title){
+
+        String copy = "";
+        for(int i = 0; i<title.length(); i++) {
+            if (title.charAt(i) == ';') {
+                copy = copy + " ";
+            } else {
+                if(title.charAt(i) == '\\'){
+                    System.out.println("TOTOOOO " + title.charAt(i) + title.charAt(i+1));
+                    copy = copy + " ";
+                } else {
+                    copy = copy + title.charAt(i) ;
+                }
+
+
+            }
+        }
+
+        return copy;
+
+    }
+
     public static String makeIntoGraphD3(String filePath){
         String inputString = "";
         try {
@@ -57,18 +90,58 @@ public class ConvertJson {
         JSONArray vertices = jsonObject.getJSONArray("vertices");
         JSONArray edges = jsonObject.getJSONArray("edges");
 
+        Map<String, Integer> mapa = new HashMap<>();
+        int idCounter = 0;
+
+        //make id into mapy kde bude cislo:makeID
         for (int i = 0; i < vertices.length(); i++) {
             Node n = new Node();
-            n.setId(makeId(vertices.getJSONObject(i).getJSONObject("title").toString()));
-            n.setGroup(vertices.getJSONObject(i).getJSONObject("title").getString("kind"));
-            n.setDetail(vertices.getJSONObject(i).getJSONObject("details").toString());
+            String topLabel = makeTopLabel(vertices.getJSONObject(i).getJSONObject("title").toString());
+
+            String uniqueID = makeUniqueID(vertices.getJSONObject(i));
+
+
+            if(mapa.containsKey(uniqueID)){
+                n.setId(mapa.get(uniqueID));
+            } else {
+                n.setId(idCounter);
+                mapa.put(uniqueID, idCounter);
+                idCounter++;
+            }
+            n.setTopLabel(removeDelimiter(topLabel));
+            n.setGroup(removeDelimiter(vertices.getJSONObject(i).getJSONObject("title").getString("kind")));
+            n.setDetail(removeDelimiter(vertices.getJSONObject(i).getJSONObject("details").toString()));
             nodes.add(n);
         }
 
         for (int i = 0; i <edges.length() ; i++) {
             Link l = new Link();
-            l.setSource(makeId(edges.getJSONArray(i).getJSONObject(0).getJSONObject("title").toString()));
-            l.setTarget(makeId(edges.getJSONArray(i).getJSONObject(1).getJSONObject("title").toString()));
+            String sourceTopLabel = makeTopLabel(edges.getJSONArray(i).getJSONObject(0).getJSONObject("title").toString());
+            String targetTopLabel = makeTopLabel(edges.getJSONArray(i).getJSONObject(1).getJSONObject("title").toString());
+
+            String sourceUniqueId = makeUniqueID(edges.getJSONArray(i).getJSONObject(0));
+            String targetUniqueId = makeUniqueID(edges.getJSONArray(i).getJSONObject(1));
+
+
+            //l.setSource(mapa.get(sourceTopLabel));
+            //l.setTarget(mapa.get(targetTopLabel));
+
+            if(mapa.containsKey(sourceUniqueId)){
+                l.setSource(mapa.get(sourceUniqueId));
+            } else {
+                l.setSource(idCounter);
+                mapa.put(sourceUniqueId, idCounter);
+                idCounter++;
+            }
+
+            if(mapa.containsKey(targetUniqueId)){
+                l.setTarget(mapa.get(targetUniqueId));
+            } else {
+                l.setTarget(idCounter);
+                mapa.put(targetUniqueId, idCounter);
+                idCounter++;
+            }
+
             l.setValue(3);
             links.add(l);
         }

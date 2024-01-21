@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/GraphD3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/GraphJSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/VertexObjectHolder.java" afterDir="false" />
+    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="add tree second try">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Detail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/VertexObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/VertexObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/structure.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/structure.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +83,12 @@
       <workItem from="1702478875790" duration="884000" />
       <workItem from="1702550176141" duration="4525000" />
       <workItem from="1702587638219" duration="649000" />
-      <workItem from="1702637431817" duration="11964000" />
+      <workItem from="1702637431817" duration="14759000" />
+      <workItem from="1704993722706" duration="653000" />
+      <workItem from="1705003200231" duration="1650000" />
+      <workItem from="1705051520263" duration="186000" />
+      <workItem from="1705060808369" duration="4748000" />
+      <workItem from="1705867026478" duration="7496000" />
     </task>
     <task id="LOCAL-00001" summary="Rolo try commit">
       <created>1702587684179</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702587684179</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add graphD3 representation, repair structure of elements">
+      <created>1702650033408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702650033409</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +123,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rolo try commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rolo try commit" />
+    <MESSAGE value="add graphD3 representation, repair structure of elements" />
+    <MESSAGE value="add tree first try" />
+    <MESSAGE value="add tree second try" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tree second try" />
   </component>
 </project>
