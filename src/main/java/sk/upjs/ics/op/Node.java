@@ -1,20 +1,23 @@
 package sk.upjs.ics.op;
 
+import java.util.Objects;
+
 public class Node {
 
     private int id;
-    private String topLabel;
-    private String group;
-    private String detail;
+    private Data data;
+    private String position;
+    private String type;
 
-    public Node(int id, String topLabel, String group, String detail) {
-        this.id = id;
-        this.topLabel = topLabel;
-        this.group = group;
-        this.detail = detail;
+    public Node(){
+
     }
 
-    public Node() {
+    public Node(int id, Data data, String position, String type) {
+        this.id = id;
+        this.data = data;
+        this.position = position;
+        this.type = type;
     }
 
     public int getId() {
@@ -25,37 +28,52 @@ public class Node {
         this.id = id;
     }
 
-    public String getTopLabel() {
-        return topLabel;
+    public Data getData() {
+        return data;
     }
 
-    public void setTopLabel(String topLabel) {
-        this.topLabel = topLabel;
+    public void setData(Data data) {
+        this.data = data;
     }
 
-    public String getGroup() {
-        return group;
+    public String getPosition() {
+        return position;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getType() {
+        return type;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Node node = (Node) o;
+        return id == node.id && Objects.equals(data, node.data) && Objects.equals(position, node.position) && Objects.equals(type, node.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, data, position, type);
     }
 
     @Override
     public String toString() {
         return "{" +
-                "\"id\": " + id + "," +
-                "\"topLabel\": " + topLabel + "," +
-                "\"group\": \"" + group + "\"," +
-                "\"detail\": " + detail + "" +
+                "id: \"" + id + "\""+
+                ", data: " + data +
+                ", " + position +
+                ", type: \"" + type +"\""+
                 "}\n";
     }
+
+
 }

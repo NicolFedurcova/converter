@@ -5,7 +5,6 @@ import org.json.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -36,6 +35,7 @@ public class Parser {
 
         Map<String, List<String>> simpleObjectLabels = getLabels(jsonObject, simpleObjects);
         Map<String, List<String>> complexObjectLabels = getLabels(jsonObject, complexObjects);
+
         Set<VertexObject> vertices = new HashSet<>();
         List<List<VertexObject>> edges = new ArrayList<>();
 
@@ -154,13 +154,27 @@ public class Parser {
                 }
                 try {
                     JSONArray sources = volumes.getJSONObject(i).getJSONObject("projected").getJSONArray("sources");
-                    for (int j = 0; j < sources.length(); j++) {
-                        VertexObject configMap = convertConfigMap(sources.getJSONObject(i).getJSONObject("configMap"));
-                        vertices.add(configMap);
-                        edges.add(new ArrayList<>(Arrays.asList(vo, configMap)));
-                        volumes.getJSONObject(i).getJSONObject("projected").getJSONArray("sources").getJSONObject(j).remove("configMap");
+                    System.out.println("BEFORE: " + sources.length());
+                    for (int z = 0; z < sources.length();z++) {
+                        try {
+                            VertexObject configMap = convertConfigMap(sources.getJSONObject(z).getJSONObject("configMap"));
+                            System.out.println("sources: " + sources);
+                            System.out.println("length: " + sources.length());
+                            System.out.println("Z: "+ z);
+                            System.out.println("I: "+ i);
+                            System.out.println("HERE\nHERE\nHERE\nHERE\n"+ configMap.getTitle().getName()+"\nHERE\nHERE\nHERE" );
+                            vertices.add(configMap);
+                            edges.add(new ArrayList<>(Arrays.asList(vo, configMap)));
+                            sources.getJSONObject(z).remove("configMap");
+                            volumes.getJSONObject(i).getJSONObject("projected").getJSONArray("sources").getJSONObject(z).remove("configMap");
+
+
+                        } catch (JSONException eeee){
+
+                        }
                     }
                 } catch (JSONException eee) {
+                    //System.out.println(eee);
                 }
 
                 Detail detail = new Detail();
@@ -242,6 +256,7 @@ public class Parser {
         object.getJSONObject("metadata").remove("name");
         title.setLabels(labelsList);
         object.getJSONObject("metadata").remove("labels");
+
         VertexObject namespace = createNamespace(object.getJSONObject("metadata").getString("namespace"));
         object.getJSONObject("metadata").remove("namespace");
 
@@ -278,7 +293,7 @@ public class Parser {
 
         vertices.add(vo);
         vertices.add(namespace);
-        edges.add(new ArrayList<>(Arrays.asList(vo, namespace)));
+        edges.add(new ArrayList<>(Arrays.asList(namespace, vo)));
         graphJSON.setEdges(edges);
         graphJSON.setVertices(vertices);
         return graphJSON;
@@ -319,7 +334,7 @@ public class Parser {
 
         vertices.add(vo);
         vertices.add(namespace);
-        edges.add(new ArrayList<>(Arrays.asList(vo, namespace)));
+        edges.add(new ArrayList<>(Arrays.asList(namespace, vo)));
         graphJSON.setEdges(edges);
         graphJSON.setVertices(vertices);
         return graphJSON;
@@ -388,7 +403,7 @@ public class Parser {
 
         vertices.add(vo);
         vertices.add(namespace);
-        edges.add(new ArrayList<>(Arrays.asList(vo, namespace)));
+        edges.add(new ArrayList<>(Arrays.asList(namespace, vo)));
         graphJSON.setEdges(edges);
         graphJSON.setVertices(vertices);
         return graphJSON;
@@ -446,7 +461,7 @@ public class Parser {
 
         vertices.add(vo);
         vertices.add(namespace);
-        edges.add(new ArrayList<>(Arrays.asList(vo, namespace)));
+        edges.add(new ArrayList<>(Arrays.asList(namespace, vo)));
         graphJSON.setEdges(edges);
         graphJSON.setVertices(vertices);
         return graphJSON;

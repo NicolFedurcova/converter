@@ -1,6 +1,7 @@
 package sk.upjs.ics.op;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedWriter;
@@ -17,14 +18,14 @@ public class ConvertJson {
 
     public static String makeUniqueID(JSONObject object){
 
-        String title = makeTopLabel(object.getJSONObject("title").toString());
-        String details = makeTopLabel(object.getJSONObject("details").toString());
-        return  makeTopLabel(title)+ "     " + makeTopLabel(details);
+        String title = stripBracketsQuotes(object.getJSONObject("title").toString());
+        String details = stripBracketsQuotes(object.getJSONObject("details").toString());
+        return  stripBracketsQuotes(title)+ "     " + stripBracketsQuotes(details);
 
 
     }
 
-    public static String makeTopLabel(String title){
+    public static String stripBracketsQuotes(String title){
         /*
         String copy = title;
         copy.replace("\"", " ");
@@ -49,30 +50,15 @@ public class ConvertJson {
             }
         }
         //System.out.println("ID: " + "\"" + copy + "\"");
-        return "\"" + copy + "\"";
+        return  copy ;
     }
 
-    public static String removeDelimiter(String title){
-
-        String copy = "";
-        for(int i = 0; i<title.length(); i++) {
-            if (title.charAt(i) == ';') {
-                copy = copy + " ";
-            } else {
-                if(title.charAt(i) == '\\'){
-                    System.out.println("TOTOOOO " + title.charAt(i) + title.charAt(i+1));
-                    copy = copy + " ";
-                } else {
-                    copy = copy + title.charAt(i) ;
-                }
-
-
-            }
-        }
-
-        return copy;
-
+    public static String replaceSingleQuotes(String input){
+        return input.replace('\'', '"');
     }
+
+
+
 
     public static String makeIntoGraphD3(String filePath){
         String inputString = "";
@@ -91,12 +77,12 @@ public class ConvertJson {
         JSONArray edges = jsonObject.getJSONArray("edges");
 
         Map<String, Integer> mapa = new HashMap<>();
-        int idCounter = 0;
+        int idCounter = 1;
 
         //make id into mapy kde bude cislo:makeID
         for (int i = 0; i < vertices.length(); i++) {
             Node n = new Node();
-            String topLabel = makeTopLabel(vertices.getJSONObject(i).getJSONObject("title").toString());
+            //String topLabel = makeTopLabel(vertices.getJSONObject(i).getJSONObject("title").toString());
 
             String uniqueID = makeUniqueID(vertices.getJSONObject(i));
 
@@ -104,51 +90,75 @@ public class ConvertJson {
             if(mapa.containsKey(uniqueID)){
                 n.setId(mapa.get(uniqueID));
             } else {
-                n.setId(idCounter);
-                mapa.put(uniqueID, idCounter);
-                idCounter++;
+                if(vertices.getJSONObject(i).getJSONObject("title").getString("kind").equals("namespace")){
+                    n.setId(0);
+                    mapa.put(uniqueID, 0);
+                } else {
+                    n.setId(idCounter);
+                    mapa.put(uniqueID, idCounter);
+                    idCounter++;
+                }
             }
-            n.setTopLabel(removeDelimiter(topLabel));
-            n.setGroup(removeDelimiter(vertices.getJSONObject(i).getJSONObject("title").getString("kind")));
-            n.setDetail(removeDelimiter(vertices.getJSONObject(i).getJSONObject("details").toString()));
+            Data data = new Data();
+            data.setKind(vertices.getJSONObject(i).getJSONObject("title").getString("kind"));
+            data.setName(vertices.getJSONObject(i).getJSONObject("title").getString("name"));
+
+            try{
+                System.out.println(vertices.getJSONObject(i).getJSONObject("title").getJSONArray("labels"));
+                data.setLabels(convertJsonArray(vertices.getJSONObject(i).getJSONObject("title").getJSONArray("labels")));
+            }catch(JSONException eee){
+                data.setLabels(null);
+            }
+            data.setDetail(replaceSingleQuotes(vertices.getJSONObject(i).getJSONObject("details").toString()));
+            n.setData(data);
+            n.setPosition("position");
+            n.setType("objectNode");
             nodes.add(n);
         }
 
         for (int i = 0; i <edges.length() ; i++) {
             Link l = new Link();
-            String sourceTopLabel = makeTopLabel(edges.getJSONArray(i).getJSONObject(0).getJSONObject("title").toString());
-            String targetTopLabel = makeTopLabel(edges.getJSONArray(i).getJSONObject(1).getJSONObject("title").toString());
+            //String sourceTopLabel = stripBracketsQuotes(edges.getJSONArray(i).getJSONObject(1).getJSONObject("title").toString());
+            //String targetTopLabel = stripBracketsQuotes(edges.getJSONArray(i).getJSONObject(0).getJSONObject("title").toString());
 
             String sourceUniqueId = makeUniqueID(edges.getJSONArray(i).getJSONObject(0));
             String targetUniqueId = makeUniqueID(edges.getJSONArray(i).getJSONObject(1));
 
-
-            //l.setSource(mapa.get(sourceTopLabel));
-            //l.setTarget(mapa.get(targetTopLabel));
-
             if(mapa.containsKey(sourceUniqueId)){
-                l.setSource(mapa.get(sourceUniqueId));
+                l.setSource(mapa.get(sourceUniqueId).toString());
             } else {
-                l.setSource(idCounter);
+                l.setSource(Integer.toString(idCounter));
                 mapa.put(sourceUniqueId, idCounter);
                 idCounter++;
             }
 
             if(mapa.containsKey(targetUniqueId)){
-                l.setTarget(mapa.get(targetUniqueId));
+                l.setTarget(mapa.get(targetUniqueId).toString());
             } else {
-                l.setTarget(idCounter);
+                l.setTarget(Integer.toString(idCounter));
                 mapa.put(targetUniqueId, idCounter);
                 idCounter++;
             }
 
-            l.setValue(3);
-            links.add(l);
+            l.setValue(mapa.get(sourceUniqueId)+ "->" + mapa.get(targetUniqueId));
+            if(links.contains(l)){
+            }else{
+                links.add(l);
+            }
+
         }
 
         graph.setNodes(nodes);
         graph.setLinks(links);
         return graph.toString();
+    }
+
+    public static ArrayList<String> convertJsonArray(JSONArray array){
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i <array.length() ; i++) {
+            list.add(stripBracketsQuotes(array.get(i).toString()));
+        }
+        return list;
     }
 
     public static void main(String[] args) {

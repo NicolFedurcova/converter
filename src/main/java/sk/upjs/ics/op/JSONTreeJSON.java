@@ -71,8 +71,8 @@ public class JSONTreeJSON {
 
                             objectNode.set("list_parents", listParents);
                             if(!hasAnyParent){
-                                objectNode.put("first_parent", 0);
-                                System.out.println("FIRST PARENT: " + 0);
+                                objectNode.putNull("first_parent");
+                                System.out.println("FIRST PARENT: " + "null");
                             }
 
                             // Add all previous parameters of the node

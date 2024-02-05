@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="add tree second try">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/TreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,10 @@
       <workItem from="1705003200231" duration="1650000" />
       <workItem from="1705051520263" duration="186000" />
       <workItem from="1705060808369" duration="4748000" />
-      <workItem from="1705867026478" duration="7496000" />
+      <workItem from="1705867026478" duration="7951000" />
+      <workItem from="1706132719228" duration="18000" />
+      <workItem from="1706808465662" duration="14516000" />
+      <workItem from="1706872316776" duration="40970000" />
     </task>
     <task id="LOCAL-00001" summary="Rolo try commit">
       <created>1702587684179</created>
@@ -104,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702650033409</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add tree second try">
+      <created>1705877022477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705877022477</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
