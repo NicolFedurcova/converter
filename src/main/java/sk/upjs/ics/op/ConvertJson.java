@@ -53,8 +53,22 @@ public class ConvertJson {
         return  copy ;
     }
 
-    public static String replaceSingleQuotes(String input){
-        return input.replace('\'', '"');
+    public static String replaceQuotes(String input){
+        StringBuilder copy = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if(currentChar=='"'){
+                if(i!=0 && input.charAt(i-1)!='\\' ){
+                    copy.append("\\\"");
+                } else {
+                    copy.append(currentChar);
+                }
+            } else {
+                copy.append(currentChar);
+            }
+        }
+        return copy.toString();
+        //return input.replace("\"", "\\\"");
     }
 
 
@@ -109,8 +123,8 @@ public class ConvertJson {
             }catch(JSONException eee){
                 data.setLabels(null);
             }
-            //data.setDetail(replaceSingleQuotes(vertices.getJSONObject(i).getJSONObject("details").toString()));
-            data.setDetail((vertices.getJSONObject(i).getJSONObject("details").toString()));
+            data.setDetail(replaceQuotes(vertices.getJSONObject(i).getJSONObject("details").toString()));
+            //data.setDetail((vertices.getJSONObject(i).getJSONObject("details").toString()));
 
             n.setData(data);
             n.setPosition("position");

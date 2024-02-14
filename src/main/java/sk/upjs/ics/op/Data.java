@@ -90,7 +90,7 @@ public class Data {
                 "\"name\": \"" + name + "\", " +
                 "\"labels\": " + labelToString(labels) + ", " +
                 //"detail: \'" + detail + " \'" +
-                "\"detail\": " + detail  +
+                "\"detail\": \"" + detail  +"\""+
                 '}';
     }
 }
