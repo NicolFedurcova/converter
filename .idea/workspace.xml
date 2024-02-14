@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="add tree second try">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/TreeNode.java" afterDir="false" />
+    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="loading json to react works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" afterDir="false" />
     </list>
@@ -94,6 +90,11 @@
       <workItem from="1706132719228" duration="18000" />
       <workItem from="1706808465662" duration="14516000" />
       <workItem from="1706872316776" duration="40970000" />
+      <workItem from="1707146197191" duration="476000" />
+      <workItem from="1707149223941" duration="14000" />
+      <workItem from="1707488592321" duration="2570000" />
+      <workItem from="1707736633676" duration="3024000" />
+      <workItem from="1707913242061" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="Rolo try commit">
       <created>1702587684179</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705877022477</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adjust the graph json outcome to fit reactflow">
+      <created>1707146475737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707146475738</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,8 @@
     <MESSAGE value="add graphD3 representation, repair structure of elements" />
     <MESSAGE value="add tree first try" />
     <MESSAGE value="add tree second try" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tree second try" />
+    <MESSAGE value="adjust the graph json outcome to fit reactflow" />
+    <MESSAGE value="loading json to react works" />
+    <option name="LAST_COMMIT_MESSAGE" value="loading json to react works" />
   </component>
 </project>

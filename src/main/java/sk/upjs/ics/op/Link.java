@@ -43,9 +43,9 @@ public class Link {
     @Override
     public String toString() {
         return "{" +
-                "id: \"" + value + "\"" + ", " +
-                "source: \"" + source + "\"" + ", " +
-                "target: \"" + target + "\"" +
+                "\"id\": \"" + value + "\"" + ", " +
+                "\"source\": \"" + source + "\"" + ", " +
+                "\"target\": \"" + target + "\"" +
                 "}\n";
     }
 

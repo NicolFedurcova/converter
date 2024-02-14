@@ -86,10 +86,11 @@ public class Data {
     @Override
     public String toString() {
         return "{ " +
-                "kind: \"" + kind + "\", " +
-                "name: \"" + name + "\", " +
-                "labels: " + labelToString(labels) + ", " +
-                "detail: \'" + detail + " \'" +
+                "\"kind\": \"" + kind + "\", " +
+                "\"name\": \"" + name + "\", " +
+                "\"labels\": " + labelToString(labels) + ", " +
+                //"detail: \'" + detail + " \'" +
+                "\"detail\": " + detail  +
                 '}';
     }
 }

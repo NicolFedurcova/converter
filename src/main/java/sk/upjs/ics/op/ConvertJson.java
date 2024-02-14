@@ -109,7 +109,9 @@ public class ConvertJson {
             }catch(JSONException eee){
                 data.setLabels(null);
             }
-            data.setDetail(replaceSingleQuotes(vertices.getJSONObject(i).getJSONObject("details").toString()));
+            //data.setDetail(replaceSingleQuotes(vertices.getJSONObject(i).getJSONObject("details").toString()));
+            data.setDetail((vertices.getJSONObject(i).getJSONObject("details").toString()));
+
             n.setData(data);
             n.setPosition("position");
             n.setType("objectNode");

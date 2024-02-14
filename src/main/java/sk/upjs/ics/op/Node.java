@@ -68,10 +68,10 @@ public class Node {
     @Override
     public String toString() {
         return "{" +
-                "id: \"" + id + "\""+
-                ", data: " + data +
-                ", " + position +
-                ", type: \"" + type +"\""+
+                "\"id\": \"" + id + "\""+
+                ", \"data\": " + data +
+                ", " + "\""+ position +"\":"+"{\"x\":0, \"y\":0}"+
+                ", \"type\": \"" + type +"\""+
                 "}\n";
     }
 
