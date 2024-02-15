@@ -62,7 +62,7 @@ public class Parser {
         }
 
         JSONArray podsJSONList = jsonObject.getJSONArray("pods");
-        Map<String, List<String>>  labelsPods = getLabels(jsonObject, new ArrayList<>(Arrays.asList("pods")));
+        Map<String, List<String>> labelsPods = getLabels(jsonObject, new ArrayList<>(Arrays.asList("pods")));
         List<String> podsLabels = labelsPods.get("pods");
         for (int j = 0; j < podsJSONList.length(); j++) {
             GraphJSON gg = convertPod(podsJSONList.getJSONObject(j), podsLabels);
@@ -71,7 +71,7 @@ public class Parser {
         }
 
         JSONArray serviceAccountsJSONList = jsonObject.getJSONArray("serviceAccounts");
-        Map<String, List<String>>  labelsServiceAccounts = getLabels(jsonObject, new ArrayList<>(Arrays.asList("serviceAccounts")));
+        Map<String, List<String>> labelsServiceAccounts = getLabels(jsonObject, new ArrayList<>(Arrays.asList("serviceAccounts")));
         List<String> serviceAccountsLabels = labelsServiceAccounts.get("serviceAccounts");
         for (int k = 0; k < serviceAccountsJSONList.length(); k++) {
             GraphJSON gg = convertServiceAccount(serviceAccountsJSONList.getJSONObject(k), serviceAccountsLabels);
@@ -98,7 +98,6 @@ public class Parser {
     private String stripDetail(String detail) {
         return detail.substring(1, detail.length() - 1);
     }
-
 
 
     private Set<VertexObject> convertContainer(JSONArray containers) {
@@ -151,7 +150,7 @@ public class Parser {
                 }
                 try {
                     JSONArray sources = volumes.getJSONObject(i).getJSONObject("projected").getJSONArray("sources");
-                    for (int z = 0; z < sources.length();z++) {
+                    for (int z = 0; z < sources.length(); z++) {
                         try {
                             VertexObject configMap = convertConfigMap(sources.getJSONObject(z).getJSONObject("configMap"));
                             vertices.add(configMap);
@@ -160,7 +159,7 @@ public class Parser {
                             volumes.getJSONObject(i).getJSONObject("projected").getJSONArray("sources").getJSONObject(z).remove("configMap");
 
 
-                        } catch (JSONException eeee){
+                        } catch (JSONException eeee) {
 
                         }
                     }
@@ -330,7 +329,7 @@ public class Parser {
         return graphJSON;
     }
 
-    public GraphJSON  convertPod(JSONObject object, List<String> listLabelNames) {
+    public GraphJSON convertPod(JSONObject object, List<String> listLabelNames) {
 
         GraphJSON graphJSON = new GraphJSON();
         Set<VertexObject> vertices = new HashSet<>();
@@ -432,7 +431,7 @@ public class Parser {
 
         try {
             JSONArray secrets = object.getJSONArray("secrets");
-            for (int i = 0; i <secrets.length() ; i++) {
+            for (int i = 0; i < secrets.length(); i++) {
                 VertexObject secret = convertSecret(secrets.getJSONObject(i));
                 vertices.add(secret);
                 edges.add(new ArrayList<>(Arrays.asList(vo, secret)));
@@ -457,7 +456,6 @@ public class Parser {
         return graphJSON;
 
     }
-
 
 
     public VertexObject createNamespace(String name) {

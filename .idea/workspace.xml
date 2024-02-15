@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="loading json to react works">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/converters/ConvertJson.java" afterDir="false" />
+    <list default="true" id="61966561-ebea-4982-90c3-aa50d3408f5c" name="Changes" comment="Final version, code clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/CSVTreeJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/ConvertJson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Detail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/GraphD3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/GraphD3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/GraphJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/GraphJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/HelloJGraphT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/JSONTreeJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/converters/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/TreeNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/VertexObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/entities/VertexObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/VertexObjectHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/graphD3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/files/input.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/converters/ConvertJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/upjs/ics/op/converters/ConvertJson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +95,9 @@
       <workItem from="1707488592321" duration="2570000" />
       <workItem from="1707736633676" duration="3024000" />
       <workItem from="1707913242061" duration="532000" />
+      <workItem from="1707996612305" duration="798000" />
+      <workItem from="1708018450409" duration="610000" />
+      <workItem from="1708020277596" duration="7958000" />
     </task>
     <task id="LOCAL-00001" summary="Rolo try commit">
       <created>1702587684179</created>
@@ -143,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707146475738</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Final version, code clean up">
+      <created>1707996797759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707996797759</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +158,7 @@
     <MESSAGE value="add tree second try" />
     <MESSAGE value="adjust the graph json outcome to fit reactflow" />
     <MESSAGE value="loading json to react works" />
-    <option name="LAST_COMMIT_MESSAGE" value="loading json to react works" />
+    <MESSAGE value="Final version, code clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version, code clean up" />
   </component>
 </project>
