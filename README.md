@@ -1,4 +1,3 @@
-README:
 1. Pull code from following repositories:
 	- IntelliJ - https://github.com/NicolFedurcova/converter
 	- VS Code - https://github.com/roland9832/praxTenser
